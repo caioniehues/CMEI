@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <script src="js/bootstrap.min.js"></script>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <title>Cadastro</title>
+        <link rel="stylesheet" href="css/login.css">
+        
+        
+
+    </head>
+
+    <body class="fundo">
+        <div class= "container-fluid">
+            <div class= "container">
+                <div class= "row" >
+                    <div class="col-6 login">
+                            <h1 class="cmei">CMEI</h1>
+                            <p><img src="logo.png" width="200" height="200">
+                            <p class="texto">Já possui Login?</p>
+                            <button type="button" class="btn btn-primary botao btn-lg">Acessar</button>
+                    </div>
+                    <div class="cadastro col-6">
+                        <p><img src="logo.png" width="200" height="200">
+                        <p class="texto2">Primeiro Acesso</p>
+                        <p class="input-container">
+                            <input id="name" class="input" type="text" pattern=".+" required />
+                            <label class="label" for="name">Nome*</label>
+                        </p>
+                        <p class="input-container">
+                            <input id="email" class="input" type="email" pattern=".+" required />
+                            <label class="label" for="email">E-mail*</label>
+                        </p>
+                        <p class="input-container">
+                            <input id="cpf" class="input" type="text" pattern=".+" required />
+                            <label class="label" for="cpf">CPF*</label>
+                        </p>
+                        <p class="input-container">
+                            <input id="senha" class="input" type="password" pattern=".+" required />
+                            <label class="label" for="senha">Senha*</label>
+                        </p>
+                        <p class="input-container">
+                            <input id="repetirsenha" class="input" type="password" pattern=".+" required />
+                            <label class="label" for="repetirsenha">Confirmar senha*</label>
+                        </p>
+                        <<p class="texto3">*Li e aceito os termos de uso.
+                            <input type = "checkbox" style = "width: 50%; height: 50%"></p>>
+                        <p class="texto3" ><a href="https://www.mozilla.org/pt-BR/">Clique aqui para acessar os termos de uso</a></p>
+                        <button type="button" class="btn btn-primary botao2 btn-lg">Cadastrar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </body>
+</html>

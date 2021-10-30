@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <script src="../static/js/bootstrap.min.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/css/bootstrap.min.css">
+    <title>Turmas</title>
+    <link rel="stylesheet" href="../static/css/turmas.css">
+    <link rel="stylesheet" href="../static/css/menu.css">
+</head>
+
+<body class="fundo">
+    <div class="container-fluid">
+        <div class="container">
+            <div class="row">
+                <div class="barra texto">
+                    <p><img src="../static/imagens/logo.png" width="66" height="57">
+                        CMEI Pedro Dambros</p>
+
+                    <ul>
+                        <li><a href="#home">Perfil</a></li>
+                        <li><a href="#news">Coordenação</a></li>
+                        <li><a href="#contact">Secretaria</a></li>
+                        <li><a href="#about">Professores</a></li>
+                        <li><a class="active" href="#news">Turmas</a></li>
+                        <li><a href="#contact">Alunos</a></li>
+                        <li><a href="#about">Calendário</a></li>
+                        <li><a href="#contact">Configurações</a></li>
+                        <li><a href="#about">Sair</a></li>
+                    </ul>
+                </div>
+                <div class="organize">
+                    <div class="col-6 esquerdo">
+                        <p class="texto8">Turmas</p>
+                        <div>
+                            <li><b href=""><img src="../static/imagens/CsltTurma.png"></b></li>
+                            <li><b class="activeBtn" href=""><img src="../static/imagens/AdcTurma.png"></b></li>
+                            <li><b href=""><img src="../static/imagens/ArqTurma.png"></b></li>
+                        </div>
+                        <div id="divBusca">
+                            <p><input type="text" id="txtBusca" placeholder="Buscar..." />
+                                <button id="btnBusca"><img src="../static/imagens/buscar.png"></button>
+                            </p>
+                        </div>
+                        <div class="turmaList">
+                            <li>
+                                <p>
+                                    <c href=""><button id="turma">1A</c>
+                                </p>
+                            </li>
+                            <li>
+                                <p>
+                                    <c href=""><button id="turma">1B</c>
+                                </p>
+                            </li>
+                        </div>
+                    </div>
+                    <div class="col-6 direito">
+                        <p class="texto10">Adicionar nova turma</p>
+                        <div>
+                            <p class="input-container">
+                                <input id="name" class="input" type="text" pattern=".+" required />
+                                <label class="label" for="name">Turma*</label>
+                            </p>
+                            <p class="checkbox-container">
+                                <label class="label2">Turno* </label>
+                                <select class="selecao">
+                                    <option value="0">Matutino</option>
+                                    <option value="1">Vespertino</option>
+                                </select>
+                            </p>
+                            <p class="checkbox-container">
+                                <label class="label2">Responsável* </label>
+                                <select class="selecao">
+                                    <option value="0">Maria Lucia</option>
+                                    <option value="1">Aline Souza</option>
+                                </select>
+                            </p>
+                            <panel class="botoes">
+                                <p><button type="button" class="btn btn-primary botao2 btn-lg">Adicionar Alunos</button>
+                                </p>
+                                <p><button type="button" class="btn btn-primary botao2 btn-lg">Adicionar
+                                        Professores</button></p>
+                                <p><button type="button" class="btn btn-primary botao2 btn-lg">Cronograma</button></p>
+                                <p><button type="button" class="btn btn-primary botao2 btn-lg">Calendario da
+                                        Turma</button></p>
+                            </panel>
+                            <p class="texto9">*Li e aceito os termos de uso.
+                                <input type="checkbox">
+                            </p>
+                            <p class="texto9"><a href="https://www.mozilla.org/pt-BR/">Clique aqui para acessar os
+                                    termos de uso</a></p>
+                            <button type="button" class="btn btn-primary botao2 btn-lg">Cadastrar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

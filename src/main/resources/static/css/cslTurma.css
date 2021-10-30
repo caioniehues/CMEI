@@ -1,0 +1,170 @@
+/* titulo */
+.texto5 {
+  color: #2F80ED;
+  font-weight: medium;
+  font-size: 25px;
+}
+
+/* nome dos campos */
+.texto6 {
+  color: #4F4F4F;
+  font-weight: medium;
+  font-size: 15px;
+}
+
+/* preenchimento dos campos */
+.texto7 {
+  color: #4F4F4F;
+  font-weight: medium;
+  font-size: 20px;
+}
+
+/* Turmas */
+.texto8 {
+  color: white;
+  font-weight: 600;
+  font-size: 36px;
+}
+
+/* organiza os botoes em lista */
+li b {
+  display: block;
+  color: #084C7C;
+  text-align: center;
+  padding: 0px 10px;
+}
+
+/* destaca os botoes por onde o mouse passa */
+li b:hover {
+  background-color: #084C7C;
+  border-radius: 25px;
+}
+
+/* destaca o botao selecionado */
+.activeBtn{
+  background-color: #084C7C;
+  border-radius: 25px;
+}
+
+/* organiza o lado esquerdo da tela */
+.esquerdo{
+  background-color: #016BB7;
+  padding: 80px 30px 80px 30px;
+  min-height: 100vh;
+  border-radius: 70px 0 0 70px;
+  text-align: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: top;
+}
+
+/* organiza o lado direito da tela */
+.direito{
+  background-color: white;
+  padding: 80px 30px 80px 30px;
+  min-height: 100vh;
+  border-radius: 0 70px 70px 0;
+  text-align: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: top;
+}
+
+/* organiza as telas esquerda e direita */
+.organize {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  padding: 130px 0 0 0;
+  align-items: center;
+}
+
+/* botao editar */
+.editar {
+  width: 33px;
+  height: 38px;
+  margin-left: 500px;
+  margin-top: -45px;
+}
+
+/* adiciona uma linha cinza */
+#linha-horizontal2 {
+  width: 300px;
+  border: 1px solid #4F4F4F;
+}
+
+/* organiza os botoes */
+.botoes {
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* campo de busca */
+#divBusca{
+  margin-top: 30px;
+  background-color:white;
+  border:solid 2px #084C7C;
+  border-radius:10px;
+  width:400px;
+  height:32px;
+}
+
+/* campo de busca */
+#txtBusca{
+  float:left;
+  background-color:transparent;
+  padding-left:5px;
+  font-size:18px;
+  border:none;
+  height:32px;
+  width:191px;
+}
+
+/* campo de busca */
+#btnBusca{
+  float:left;
+  margin-left: 165px;
+  margin-top: 2px;
+}
+
+/* campo de busca */
+#divBusca img{
+  float:left;
+}
+
+/* lista de turmas */
+.turmaList {
+  display: flex;
+  flex-direction: column;
+  margin-top: 30px;
+  justify-content: center;
+}
+
+/* lista de turmas */
+#turma{
+  background-color: white; 
+  border:none;
+  color: #016BB7;
+  border-radius:10px;
+  padding: 0;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 20px;
+  width:400px;
+  height:32px;
+}
+
+/* design dos botoes */
+.botao2 {
+  text-align: center;
+  color: white;
+  background-color: #016BB7;
+  font-weight: bold;
+  font-size: 15px;
+  border-radius: 20px;
+  width: 200px;
+}

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <script src="../static/js/bootstrap.min.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/css/bootstrap.min.css">
+    <title>Login</title>
+    <link rel="stylesheet" href="../static/css/login.css">
+</head>
+
+<body class="fundo">
+    <div class="container-fluid">
+        <div class="container">
+            <div class="row">
+                <div class="col-6 login2">
+                    <form method="POST">
+                        <h1 class="cmei2">CMEI</h1>
+                        <img src="../static/imagens/logo.png" width="200" height="200">
+                        <p class="texto2">Bem-vindo!</p>
+
+                        <p class="input-container">
+                            <input id="email" class="input" type="email" pattern=".+" required />
+                            <label class="label" for="email">E-mail*</label>
+                        </p>
+                        <p class="input-container">
+                            <input id="senha" class="input" type="password" pattern=".+" required />
+                            <label class="label" for="senha">Senha*</label>
+                        </p>
+
+                        <button type="button" name="entrar" class="btn btn-primary botao btn-lg"
+                            style="background-color:#016BB7;color: white;">Acessar</button>
+                    </form>
+                </div>
+                <div class="cadastro2 col-6">
+                    <h1 class="cmei">CMEI</h1>
+                    <p><img src="../static/imagens/logo.png" width="200" height="200">
+                    <p class="texto">Primeiro vez aqui?</p>
+                    <a href="Cadastro.html"> <button type="button"
+                            class="btn btn-primary botao btn-lg">Cadastrar</button></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

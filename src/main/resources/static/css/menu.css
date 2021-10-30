@@ -1,0 +1,68 @@
+/* barra azul do titulo */
+.barra {
+  background: #2F80ED;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 119px;
+}
+
+/* fundo da tela */
+.fundo {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  background: #BDE3FF;
+  padding: 30px;
+  align-items: center;
+  flex-direction: column;
+}
+
+/* titulo */
+.texto { 
+  color: white;
+  font-weight: bold;
+  font-size: 48px;
+}
+
+/* barra do menu */
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #084C7C;
+  position: absolute;
+  top: 100;
+  left: 0;
+  right: 0;
+  height: 30px;
+}
+
+/* organiza os botoes do menu em lista */
+li {
+  list-style-type: none;
+  float: left;
+}
+
+/* formata os botoes do menu */
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 0px 30px;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+/* destaca os botoes por onde o mouse passa */
+li a:hover {
+  background-color: white;
+}
+
+/* destaca o botao selecionado */
+.active{
+  background-color: white;
+  color:#084C7C;
+}

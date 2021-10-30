@@ -1,100 +1,32 @@
-.barra {
-  background: #2F80ED;
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 119px;
-}
-.fundo {
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  background: #BDE3FF;
-  padding: 30px;
-  align-items: center;
-  flex-direction: column;
-}
-
-.texto {
-  color: white;
-  font-weight: bold;
-  font-size: 48px;
-}
-
-.texto2 {
-  color: white;
-  font-weight: medium;
-  font-size: 25px;
-}
-
-.texto3 {
-  color: white;
-  font-weight: medium;
-  font-size: 15px;
-}
-
-.texto4 {
-  color: white;
-  font-weight: medium;
-  font-size: 20px;
-}
-
+/* nome */
 .texto5 {
   color: #2F80ED;
   font-weight: medium;
   font-size: 25px;
 }
 
+/* titulo dos campos */
 .texto6 {
   color: #4F4F4F;
   font-weight: medium;
   font-size: 15px;
 }
 
+/* preenchimento dos campos */
 .texto7 {
   color: #4F4F4F;
   font-weight: medium;
   font-size: 20px;
 }
 
+/* Coordenadores */
 .texto8 {
   color: white;
   font-weight: 600;
   font-size: 36px;
 }
 
-ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-  background-color: #084C7C;
-  position: absolute;
-  top: 100;
-  left: 0;
-  right: 0;
-  height: 30px;
-}
-
-li {
-  list-style-type: none;
-  float: left;
-}
-
-li a {
-  display: block;
-  color: white;
-  text-align: center;
-  padding: 0px 15px;
-  text-decoration: none;
-  font-size: 18px;
-}
-
-li a:hover {
-  background-color: white;
-}
-
+/* organiza os botoes em lista */
 li b {
   display: block;
   color: #084C7C;
@@ -102,76 +34,45 @@ li b {
   padding: 0px 10px;
 }
 
+/* destaca os botoes por onde o mouse passa */
 li b:hover {
   background-color: #084C7C;
   border-radius: 25px;
 }
 
-.active{
-  background-color: white;
-  color:#084C7C;
-}
-
+/* destaca o botao selecionado */
 .activeBtn{
   background-color: #084C7C;
   border-radius: 25px;
 }
 
+/* organiza o lado esquerdo da tela */
 .esquerdo{
   background-color: #016BB7;
-  padding: 0 30px 150px 30px;
-  height: 650px;
+  padding: 80px 30px 80px 30px;
+  height: 800px;
   border-radius: 70px 0 0 70px;
   text-align: center;
   align-items: center;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: top;
 }
 
+/* organiza o lado direito da tela */
 .direito{
   background-color: white;
-  padding: 0 30px 80px 30px;
-  height: 650px;
+  padding: 80px 30px 80px 30px;
+  height: 800px;
   border-radius: 0 70px 70px 0;
   text-align: center;
   align-items: center;
   display: flex;
   flex-direction: column;
-  justify-content: center
+  justify-content: top;
 }
 
-.cam {
-  width: 32px;
-  height: 32px;
-  margin-top: 100px;
-}
-
-.foto {
-  width: 146px;
-  height: 140px;
-}
-
-.editar {
-  width: 33px;
-  height: 38px;
-  margin-left: 500px;
-}
-
-#linha-horizontal {
-  width: 300px;
-  border: 1px solid white;
-}
-
-#linha-horizontal2 {
-  width: 300px;
-  border: 1px solid #4F4F4F;
-}
-
-.alinhamento {
-  text-align: left;
-}
-
+/* organiza as telas esquerda e direita */
 .organize {
   min-height: 100vh;
   display: flex;
@@ -180,6 +81,39 @@ li b:hover {
   align-items: center;
 }
 
+/* organiza o icone da camera */
+.cam {
+  width: 32px;
+  height: 32px;
+  margin-top: 100px;
+}
+
+/* organiza o icone da foto */
+.foto {
+  width: 146px;
+  height: 140px;
+}
+
+/* organiza o botao editar */
+.editar {
+  width: 33px;
+  height: 38px;
+  margin-left: 500px;
+  margin-top: -45px;
+}
+
+/* adiciona uma linha horizontal cinza */
+#linha-horizontal2 {
+  width: 300px;
+  border: 1px solid #4F4F4F;
+}
+
+/* alinha os campos a esquerda */
+.alinhamento {
+  text-align: left;
+}
+
+/* adiciona o campo de busca */
 #divBusca{
   margin-top: 30px;
   background-color:white;
@@ -189,6 +123,7 @@ li b:hover {
   height:32px;
 }
 
+/* organiza o texto do campo de busca */
 #txtBusca{
   float:left;
   background-color:transparent;
@@ -199,16 +134,19 @@ li b:hover {
   width:191px;
 }
 
+/* cria o botao do campo de busca */
 #btnBusca{
   float:left;
   margin-left: 165px;
   margin-top: 2px;
 }
 
+/* adiciona imagem ao botao do campo de busca */
 #divBusca img{
   float:left;
 }
 
+/* organiza os bototes de coordenadores em lista */
 .coordList {
   display: flex;
   flex-direction: column;
@@ -216,6 +154,7 @@ li b:hover {
   justify-content: center;
 }
 
+/* formatação dos botoes de coordenadores */
 #coord{
   background-color: white; 
   border:none;

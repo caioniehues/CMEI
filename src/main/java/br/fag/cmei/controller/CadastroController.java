@@ -7,7 +7,14 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class CadastroController
 {
     @RequestMapping(value = "/")
-    public String abreCadastro(){
+    public String rendenizarCadastro(){
+
+
         return "cadastro";
     }
+
+
+//    public String realizarCadastroUsuario(){
+//
+//    }
 }

@@ -6,13 +6,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 public class LoginController
 {
-    @RequestMapping(value = "/logar")
-    public String abreLogin(){
-        return "logar";
+    @RequestMapping(value = "/login")
+    public String rendenizarLogin(){
+        return "login";
     }
 
-//    @RequestMapping(value = "/error")
-//    public String error(){
-//        return "adc_turma";
-//    }
+    @RequestMapping(value = "cadastro")
+    public String rendenizarCadastro(){
+        return "cadastro";
+    }
 }

@@ -2,13 +2,14 @@
 <html lang="pt-br">
 
 <head>
-    <script src="../static/js/bootstrap.min.js"></script>
+    <script th:src="@{js/bootstrap.min.js}"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../static/css/bootstrap.min.css">
-    <title>Coordenação</title>
-    <link rel="stylesheet" href="../static/css/perfil.css">
-    <link rel="stylesheet" href="../static/css/menu.css">
+    <link rel="stylesheet" th:href="@{css/bootstrap.min.css}">
+
+    <title>Perfil</title>
+    <link rel="stylesheet" href="css/perfil.css">
+    <link rel="stylesheet" href="css/menu.css">
 </head>
 
 <body class="fundo">
@@ -16,11 +17,11 @@
         <div class="container">
             <div class="row">
                 <div class="barra texto">
-                    <p><img src="../static/imagens/logo.png" width="66" height="57"> CMEI Pedro Dambros</p>
+                    <p><img src="imagens/logo.png" width="66" height="57"> CMEI Pedro Dambros</p>
                     <ul>
                         <li><a class="active" href="#home">Perfil</a></li>
                         <li><a href="CsltCoordenação.html">Coordenação</a></li>
-                        <li><a href="#contact">Secretaria</a></li>
+                        <li><a href="CsltSecretaria.html">Secretaria</a></li>
                         <li><a href="#about">Professores</a></li>
                         <li><a href="#news">Turmas</a></li>
                         <li><a href="#contact">Alunos</a></li>
@@ -31,9 +32,9 @@
                 </div>
                 <div class="organize">
                     <div class="col-6 esquerdo">
-                        <a href=""><img src="../static/imagens/editar1.png" class="editar"></a>
-                        <p><img src="../static/imagens/foto1.png" class="foto">
-                            <a href=""><img src="../static/imagens/cam1.png" class="cam"></a>
+                        <a href=""><img src="imagens/editar1.png" class="editar"></a>
+                        <p><img src="imagens/foto1.png" class="foto">
+                            <a href=""><img src="imagens/cam1.png" class="cam"></a>
                         </p>
                         <p class="texto2">Cmei Pedro Dambros</p>
                         <div id="linha-horizontal"></div>
@@ -47,9 +48,9 @@
                         <div id="linha-horizontal"></div>
                     </div>
                     <div class="col-6 direito">
-                        <a href=""><img src="../static/imagens/editar2.png" class="editar"></a>
-                        <p><img src="../static/imagens/foto2.png" class="foto">
-                            <a href=""><img src="../static/imagens/cam2.png" class="cam"></a>
+                        <a href=""><img src="imagens/editar2.png" class="editar"></a>
+                        <p><img src="imagens/foto2.png" class="foto">
+                            <a href=""><img src="imagens/cam2.png" class="cam"></a>
                         </p>
                         <p class="texto5">Anderson da Silva</p>
                         <div id="linha-horizontal2"></div>

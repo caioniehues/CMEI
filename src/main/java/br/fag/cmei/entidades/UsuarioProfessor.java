@@ -1,7 +1,12 @@
 package br.fag.cmei.entidades;
 
+import lombok.Getter;
+import lombok.Setter;
+
 import javax.persistence.*;
 
+@Getter
+@Setter
 @Table(name = "usuario_professor")
 @Entity
 public class UsuarioProfessor

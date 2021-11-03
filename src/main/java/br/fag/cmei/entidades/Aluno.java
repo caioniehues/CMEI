@@ -1,10 +1,13 @@
 package br.fag.cmei.entidades;
 
 import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
 import javax.persistence.*;
 
-@Data
+@Getter
+@Setter
 @Table(name = "aluno")
 @Entity
 public class Aluno

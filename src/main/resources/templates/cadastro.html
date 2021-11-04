@@ -25,7 +25,7 @@
                     <div class="cadastro col-6">
                         <p><img src="imagens/logo.png" width="200" height="200">
                         <p class="texto2">Primeiro Acesso</p>
-                        <form action="/" th:object="${user}" method="post" enctype="utf8" >
+                        <form action="/" th:object="${usuario}" method="post" enctype="utf8" >
                             <p class="input-container">
                                 <input id="name" class="input" type="text" pattern=".+" required />
                                 <label class="label" for="name">Nome*</label>
@@ -34,7 +34,7 @@
                                 <input id="email" class="input" type="email" pattern=".+" required />
                                 <label class="label" for="email">E-mail*</label>
                             </p>
-                            <p class="input-container">
+                           <p class="input-container">
                                 <input id="cpf" class="input" type="text" pattern=".+" required />
                                 <label class="label" for="cpf">CPF*</label>
                             </p>

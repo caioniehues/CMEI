@@ -19,15 +19,15 @@
                 <div class="barra texto">
                     <p><img src="imagens/logo.png" width="66" height="57"> CMEI Pedro Dambros</p>
                     <ul>
-                        <li><a href="Perfil.html">Perfil</a></li>
-                        <li><a class="active" href="CsltCoordenação.html">Coordenação</a></li>
-                        <li><a href="CsltSecretaria.html">Secretaria</a></li>
-                        <li><a href="#about">Professores</a></li>
-                        <li><a href="#news">Turmas</a></li>
-                        <li><a href="#contact">Alunos</a></li>
-                        <li><a href="#about">Calendário</a></li>
-                        <li><a href="#contact">Configurações</a></li>
-                        <li><a href="Login.html">Sair</a></li>
+                        <li><a th:href="@{perfil}">Perfil</a></li>
+                        <li><a class="active" th:href="@{consultar_coordenacao}">Coordenação</a></li>
+                        <li><a th:href="@{consultar_secretaria}">Secretaria</a></li>
+                        <li><a >Professores</a></li>
+                        <li><a >Turmas</a></li>
+                        <li><a >Alunos</a></li>
+                        <li><a >Calendário</a></li>
+                        <li><a >Configurações</a></li>
+                        <li><a th:href="@{login}">Sair</a></li>
                     </ul>
                 </div>
                 <div class="organize">

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-br"
+      xmlns:th="http://www.thymeleaf.org">
 
 <head>
     <script th:src="@{js/bootstrap.min.js}"></script>
@@ -30,7 +31,7 @@
                             <label class="label" for="senha">Senha*</label>
                         </p>
 
-                        <button type="button" name="entrar" class="btn btn-primary botao btn-lg"
+                        <a th:href="@{perfil}"/><button type="button" name="entrar" class="btn btn-primary botao btn-lg"
                             style="background-color:#016BB7;color: white;">Acessar</button>
                     </form>
                 </div>

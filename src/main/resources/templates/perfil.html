@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-br"
+      xmlns:th="http://www.thymeleaf.org">
 
 <head>
     <script th:src="@{js/bootstrap.min.js}"></script>
@@ -8,8 +9,8 @@
     <link rel="stylesheet" th:href="@{css/bootstrap.min.css}">
 
     <title>Perfil</title>
-    <link rel="stylesheet" href="css/perfil.css">
-    <link rel="stylesheet" href="css/menu.css">
+    <link rel="stylesheet" th:href="@{css/perfil.css}">
+    <link rel="stylesheet" th:href="@{css/menu.css}">
 </head>
 
 <body class="fundo">
@@ -17,24 +18,24 @@
         <div class="container">
             <div class="row">
                 <div class="barra texto">
-                    <p><img src="imagens/logo.png" width="66" height="57"> CMEI Pedro Dambros</p>
+                    <p><img th:src="@{imagens/logo.png}" width="66" height="57"> CMEI Pedro Dambros</p>
                     <ul>
                         <li><a class="active" href="#home">Perfil</a></li>
-                        <li><a href="CsltCoordenação.html">Coordenação</a></li>
-                        <li><a href="CsltSecretaria.html">Secretaria</a></li>
-                        <li><a href="#about">Professores</a></li>
-                        <li><a href="#news">Turmas</a></li>
-                        <li><a href="#contact">Alunos</a></li>
-                        <li><a href="#about">Calendário</a></li>
-                        <li><a href="#contact">Configurações</a></li>
-                        <li><a href="#about">Sair</a></li>
+                        <li><a th:href="@{consultar_coordenacao}">Coordenação</a></li>
+                        <li><a th:href="@{consultar_secretaria}">Secretaria</a></li>
+                        <li><a th:href="@{consultar_professores}">Professores</a></li>
+                        <li><a th:href="@{consultar_turmas}">Turmas</a></li>
+                        <li><a >Alunos</a></li>
+                        <li><a >Calendário</a></li>
+                        <li><a >Configurações</a></li>
+                        <li><a >Sair</a></li>
                     </ul>
                 </div>
                 <div class="organize">
                     <div class="col-6 esquerdo">
-                        <a href=""><img src="imagens/editar1.png" class="editar"></a>
-                        <p><img src="imagens/foto1.png" class="foto">
-                            <a href=""><img src="imagens/cam1.png" class="cam"></a>
+                        <a ><img th:src="@{imagens/editar1.png}" class="editar"></a>
+                        <p><img th:src="@{imagens/foto1.png}" class="foto">
+                            <a ><img th:src="@{imagens/cam1.png}" class="cam"></a>
                         </p>
                         <p class="texto2">Cmei Pedro Dambros</p>
                         <div id="linha-horizontal"></div>
@@ -48,9 +49,9 @@
                         <div id="linha-horizontal"></div>
                     </div>
                     <div class="col-6 direito">
-                        <a href=""><img src="imagens/editar2.png" class="editar"></a>
-                        <p><img src="imagens/foto2.png" class="foto">
-                            <a href=""><img src="imagens/cam2.png" class="cam"></a>
+                        <a ><img th:src="@{imagens/editar2.png}" class="editar"></a>
+                        <p><img th:src="@{imagens/foto2.png}" class="foto">
+                            <a ><img th:src="@{imagens/cam2.png}" class="cam"></a>
                         </p>
                         <p class="texto5">Anderson da Silva</p>
                         <div id="linha-horizontal2"></div>

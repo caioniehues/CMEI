@@ -8,13 +8,11 @@ public class CadastroController
 {
     @RequestMapping(value = "/")
     public String rendenizarCadastro(){
-
-
         return "cadastro";
     }
 
-
-//    public String realizarCadastroUsuario(){
-//
-//    }
+    @RequestMapping(value = "perfil")
+    public String realizarCadastroUsuario(){
+        return "perfil";
+    }
 }

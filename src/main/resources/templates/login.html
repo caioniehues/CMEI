@@ -9,7 +9,7 @@
     <link rel="stylesheet" th:href="@{css/bootstrap.min.css}">
 
     <title>Login</title>
-    <link rel="stylesheet" href="css/login.css">
+    <link rel="stylesheet" th:href="@{css/login.css}">
 </head>
 
 <body class="fundo">
@@ -19,7 +19,7 @@
                 <div class="col-6 login2">
                     <form method="POST">
                         <h1 class="cmei2">CMEI</h1>
-                        <img src="imagens/logo.png" width="200" height="200">
+                        <img th:src="@{imagens/logo.png}" width="200" height="200">
                         <p class="texto2">Bem-vindo!</p>
 
                         <p class="input-container">
@@ -37,9 +37,9 @@
                 </div>
                 <div class="cadastro2 col-6">
                     <h1 class="cmei">CMEI</h1>
-                    <p><img src="imagens/logo.png" width="200" height="200">
+                    <p><img th:src="@{imagens/logo.png}" width="200" height="200">
                     <p class="texto">Primeiro vez aqui?</p>
-                    <a th:href="@{cadastro}"> <button type="button"
+                    <a th:href="@{/login/cadastro}"> <button type="button"
                             class="btn btn-primary botao btn-lg">Cadastrar</button></a>
                 </div>
             </div>

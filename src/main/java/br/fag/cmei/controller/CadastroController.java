@@ -23,14 +23,14 @@ public class CadastroController
     @Autowired
     private UsuarioService UsuarioService;
 
-    @RequestMapping(value = "/")
+    @RequestMapping(value = "/cadastro")
     public ModelAndView rendenizarCadastro(){
         UsuarioDTO usuarioDTO = new UsuarioDTO();
 
         return new ModelAndView("cadastro", "usuario", usuarioDTO);
     }
 
-    @PostMapping(value = "/registrar")
+    @PostMapping(value = "/cadastro/registrar")
     public ModelAndView realizarCadastroUsuario(@ModelAttribute("usuario") @Valid UsuarioDTO usuario,
                                                 HttpServletRequest request, Errors errors) throws Exception {
 

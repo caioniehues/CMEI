@@ -4,6 +4,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.util.Collection;
 
 @Getter
 @Setter
@@ -23,10 +24,16 @@ public class Usuario {
     @Column(name = "email")
     private String email;
 
-
     @Column(name = "cpf", nullable = false, unique = true)
     private String cpf;
 
     @Column(name = "senha")
     private String senha;
+
+    @ManyToMany(cascade = CascadeType.ALL)
+    @JoinTable(name = "usuario_cargos",
+            joinColumns = @JoinColumn(name = "usuario_id"),
+            inverseJoinColumns = @JoinColumn(name = "cargos_id"))
+    private Collection<Cargo> cargoes;
+
 }

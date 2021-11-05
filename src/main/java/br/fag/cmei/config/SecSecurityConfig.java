@@ -11,13 +11,13 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
 @Configuration
-@ImportResource({ "classpath:webSecurityConfig.xml" })
 @EnableWebSecurity
 public class SecSecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Override
     protected void configure(final AuthenticationManagerBuilder auth) throws Exception {
         auth.inMemoryAuthentication()
+
                 .withUser("user1").password(passwordEncoder().encode("user1Pass")).roles("USER")
                 .and()
                 .withUser("user2").password(passwordEncoder().encode("user2Pass")).roles("USER")
@@ -36,23 +36,18 @@ public class SecSecurityConfig extends WebSecurityConfigurerAdapter {
                 .anyRequest().authenticated()
                 .and()
                 .formLogin()
-                .loginPage("/login.html")
+                .loginPage("/login")
                 .loginProcessingUrl("/perform_login")
                 .defaultSuccessUrl("/perfil.html", true)
                 .failureUrl("/login.html?error=true")
-
                 .and()
                 .logout()
                 .logoutUrl("/perform_logout")
                 .deleteCookies("JSESSIONID")
                 ;
-        http.formLogin().loginPage("/login.html");
 
-        http.formLogin()
-                .loginProcessingUrl("/perform_login");
 
-        http.formLogin()
-                .defaultSuccessUrl("/homepage.html");
+
     }
 
     @Bean

@@ -25,25 +25,25 @@
                     <div class="cadastro col-6">
                         <p><img src="imagens/logo.png" width="200" height="200">
                         <p class="texto2">Primeiro Acesso</p>
-                        <form action="/" th:object="${usuario}" method="post" enctype="utf8" >
+                        <form action="/registrar" th:object="${usuario}" method="post" enctype="utf8" >
                             <p class="input-container">
-                                <input id="name" class="input" type="text" pattern=".+" required />
+                                <input id="name" th:field="*{nome}" class="input" type="text" pattern=".+" required />
                                 <label class="label" for="name">Nome*</label>
                             </p>
                             <p class="input-container">
-                                <input id="email" class="input" type="email" pattern=".+" required />
+                                <input id="email" th:field="*{email}" class="input" type="email" pattern=".+" required />
                                 <label class="label" for="email">E-mail*</label>
                             </p>
                            <p class="input-container">
-                                <input id="cpf" class="input" type="text" pattern=".+" required />
+                                <input id="cpf" th:field="*{cpf}" class="input" type="text" pattern=".+" required />
                                 <label class="label" for="cpf">CPF*</label>
                             </p>
                             <p class="input-container">
-                                <input id="senha" class="input" type="password" pattern=".+" required />
+                                <input id="senha" th:field="*{senha}" class="input" type="password" pattern=".+" required />
                                 <label class="label" for="senha">Senha*</label>
                             </p>
                             <p class="input-container">
-                                <input id="repetirsenha" class="input" type="password" pattern=".+" required />
+                                <input id="repetirsenha" th:field="*{confirmaSenha}" class="input" type="password" pattern=".+" required />
                                 <label class="label" for="repetirsenha">Confirmar senha*</label>
                             </p>
                             <p class="texto3">*Li e aceito os termos de uso.

@@ -15,10 +15,10 @@ public class UsuarioService implements IUsuarioService {
     private UsuarioRepository usuarioRepository;
 
     @Override
-    public Usuario cadastrarNovoUsuario(UsuarioDTO usuarioDTO) {
-//        if(cpfJaCadastrado(usuarioDTO.getCpf())){
-//            return;
-//        }
+    public Usuario cadastrarNovoUsuario(UsuarioDTO usuarioDTO) throws Exception {
+        if(cpfJaCadastrado(usuarioDTO.getCpf())){
+            throw new Exception("Usuario já cadastrado!");
+        }
         Usuario usuario = new Usuario();
         usuario.setNome(usuarioDTO.getNome());
         usuario.setEmail(usuarioDTO.getSenha());
@@ -29,6 +29,6 @@ public class UsuarioService implements IUsuarioService {
     }
 
     private boolean cpfJaCadastrado(String cpf){
-        return usuarioRepository.findById(cpf).isPresent();
+        return usuarioRepository.buscarPorCpf(cpf) != null;
     }
 }

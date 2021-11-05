@@ -11,6 +11,7 @@ import javax.persistence.*;
 @Entity
 public class Usuario {
 
+    @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "GEN_ID_USUARIO")
     @SequenceGenerator(name = "GEN_ID_USUARIO", allocationSize = 1)
     @Column(name = "id", nullable = false)
@@ -22,7 +23,7 @@ public class Usuario {
     @Column(name = "email")
     private String email;
 
-    @Id
+
     @Column(name = "cpf", nullable = false, unique = true)
     private String cpf;
 

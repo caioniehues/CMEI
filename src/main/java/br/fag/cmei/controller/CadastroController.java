@@ -9,6 +9,7 @@ import org.springframework.ui.Model;
 import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.context.request.WebRequest;
 import org.springframework.web.servlet.ModelAndView;
@@ -22,18 +23,22 @@ public class CadastroController
     @Autowired
     private UsuarioService UsuarioService;
 
-    @GetMapping(value = "/")
-    public String rendenizarCadastro(WebRequest webRequest, Model model){
-        Usuario usuario = new Usuario();
-        model.addAttribute("usuario", usuario);
-        return "cadastro";
+    @RequestMapping(value = "/")
+    public ModelAndView rendenizarCadastro(){
+        UsuarioDTO usuarioDTO = new UsuarioDTO();
+
+        return new ModelAndView("cadastro", "usuario", usuarioDTO);
     }
 
-    @RequestMapping(value = "perfil")
+    @PostMapping(value = "/registrar")
     public ModelAndView realizarCadastroUsuario(@ModelAttribute("usuario") @Valid UsuarioDTO usuario,
                                                 HttpServletRequest request, Errors errors){
 
-        Usuario registrado = UsuarioService.cadastrarNovoUsuario(usuario);
+        try {
+            Usuario registrado = UsuarioService.cadastrarNovoUsuario(usuario);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
 
         return new ModelAndView("perfil", "usuario", usuario);
     }

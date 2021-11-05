@@ -32,14 +32,10 @@ public class CadastroController
 
     @PostMapping(value = "/registrar")
     public ModelAndView realizarCadastroUsuario(@ModelAttribute("usuario") @Valid UsuarioDTO usuario,
-                                                HttpServletRequest request, Errors errors){
+                                                HttpServletRequest request, Errors errors) throws Exception {
 
-        try {
             Usuario registrado = UsuarioService.cadastrarNovoUsuario(usuario);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
 
-        return new ModelAndView("perfil", "usuario", usuario);
+        return new ModelAndView("perfil", "usuario", registrado);
     }
 }

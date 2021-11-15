@@ -1,25 +1,26 @@
 package br.fag.cmei.entidades;
 
-import lombok.Getter;
-import lombok.Setter;
+import br.fag.cmei.dto.UsuarioDTO;
+import lombok.*;
 
 import javax.persistence.*;
 import java.util.Collection;
 
-@Getter
-@Setter
+@Data @NoArgsConstructor @AllArgsConstructor
 @Table(name = "usuario")
 @Entity
 public class Usuario {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "GEN_ID_USUARIO")
-    @SequenceGenerator(name = "GEN_ID_USUARIO", allocationSize = 1)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id", nullable = false)
     private Long id;
 
     @Column(name = "nome")
     private String nome;
+
+    @Column(name = "vinculado")
+    private boolean vinculado;
 
     @Column(name = "email")
     private String email;
@@ -30,10 +31,17 @@ public class Usuario {
     @Column(name = "senha")
     private String senha;
 
-    @ManyToMany(cascade = CascadeType.ALL)
+    @ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     @JoinTable(name = "usuario_cargos",
             joinColumns = @JoinColumn(name = "usuario_id"),
             inverseJoinColumns = @JoinColumn(name = "cargos_id"))
     private Collection<Cargo> cargoes;
 
+    public Usuario(UsuarioDTO usuarioDTO) {
+        this.nome = usuarioDTO.getNome();
+        this.senha = usuarioDTO.getSenha();
+        this.email = usuarioDTO.getEmail();
+        this.cpf = usuarioDTO.getCpf();
+        this.vinculado = true;
+    }
 }

@@ -1,7 +1,6 @@
 package br.fag.cmei.utils.validador;
 
 import br.fag.cmei.dto.UsuarioDTO;
-import br.fag.cmei.model.Usuario;
 
 import javax.validation.ConstraintValidator;
 import javax.validation.ConstraintValidatorContext;

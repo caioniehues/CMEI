@@ -26,8 +26,7 @@ public class SecSecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Override
     protected void configure(final AuthenticationManagerBuilder auth) throws Exception {
-
-        auth.inMemoryAuthentication().withUser("administrador@cmei.com").password("{noop}administrador").roles(UserRoles.DIRETOR.name());
+     //   auth.inMemoryAuthentication().withUser("administrador@cmei.com").password("{noop}administrador").roles(UserRoles.DIRETOR.name());
          auth.authenticationProvider(authProvider());
 
     }
@@ -36,13 +35,9 @@ public class SecSecurityConfig extends WebSecurityConfigurerAdapter {
     protected void configure(final HttpSecurity http) throws Exception {
         http
                 .csrf().disable()
-        .authorizeRequests().antMatchers("/login/**", "/js/**", "/css/**", "/imagens/**", "/cadastro/**", "/h2/**").permitAll()
-                .antMatchers("/consultar_coordenacao", "/consultar_secretaria", "/consultar_professores").hasRole(UserRoles.DIRETOR.name())
-                .antMatchers("/consultar_coordenacao", "/consultar_secretaria", "/consultar_professores").hasRole(UserRoles.COORDENADOR.name())
-                .antMatchers("/consultar_secretaria", "/consultar_professores").hasRole(UserRoles.SECRETARIO.name())
-                .antMatchers("/consultar_professores").hasRole(UserRoles.PROFESSOR.name())
+        .authorizeRequests().antMatchers( "/login", "/js/**", "/css/**", "/imagens/**", "/cadastro/**", "/h2/**").permitAll()
                 .anyRequest().authenticated().and()
-                .formLogin().loginPage("/login").permitAll()
+                .formLogin().loginPage("/login")
                 .defaultSuccessUrl("/perfil", true);
 
     }

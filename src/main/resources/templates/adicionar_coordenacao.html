@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-br"
+      xmlns:th="http://www.thymeleaf.org">
 
 <head>
     <script th:src="@{js/bootstrap.min.js}"></script>
@@ -36,8 +37,8 @@
                         <div>
                             <table>
                                 <tr>
-                           <td><a class="activeBtn" href="CsltCoordenação.html"><img th:src="@{imagens/CsltCoordenador.png}"></a></td>
-                           <td><a class="activeBtn" href="AdcCoordenação.html"><img th:src="@{imagens/AdcCoordenador.png}"></a><td>
+                           <td><a class="activeBtn" th:href="@{/consultar_coordenacao}"><img th:src="@{imagens/CsltCoordenador.png}"></a></td>
+                           <td><a class="activeBtn" th:href="@{/adicionar_coordenacao}"><img th:src="@{imagens/AdcCoordenador.png}"></a><td>
                             <td><a class="activeBtn" href="ArqCoordenação.html"><img th:src="@{imagens/ArqCoordenador.png}"></a><td>
                             </tr>
                             </table>
@@ -64,35 +65,38 @@
                         <p><img th:src="@{imagens/foto2.png}" class="foto">
                             <a href=""><img th:src="@{imagens/cam2.png}" class="cam"></a>
                         </p>
-                        <p class="input-container">
-                            <input id="name" class="input" type="text" pattern=".+" required />
-                            <label class="label" for="name">Nome*</label>
-                        </p>
-                        <p class="input-container">
-                            <input id="email" class="input" type="email" pattern=".+" required />
-                            <label class="label" for="email">E-mail*</label>
-                        </p>
-                        <p class="input-container">
-                            <input id="cpf" class="input" type="text" pattern=".+" required />
-                            <label class="label" for="cpf">CPF*</label>
-                        </p>
-                        <p class="input-container">
-                            <input id="telefone" class="input" type="text" pattern=".+" required />
-                            <label class="label" for="telefone">Telefone*</label>
-                        </p>
-                        <p class="input-container">
-                            <label class="label">Selecionar plantão*
-                                <select>
-                                    <option value="0">Matutino</option>
-                                    <option value="1">Vespertino</option>
-                                </select></label>
-                        </p>
-                        <p class="texto9">*Li e aceito os termos de uso.
-                            <input type="checkbox">
-                        </p>
-                        <p class="texto9"><a href="https://www.mozilla.org/pt-BR/">Clique aqui para acessar os termos de
+                        <form th:action="@{/vincular_coordenador}" th:object="${coordenador}" method="post">
+                            <p class="input-container">
+                                <input id="name" class="input" type="text" pattern=".+" th:field="*{nome}" required />
+                                <label class="label" for="name">Nome*</label>
+                            </p>
+                            <p class="input-container">
+                                <input id="email" class="input" type="email" pattern=".+" th:field="*{email}" required />
+                                <label class="label" for="email">E-mail*</label>
+                            </p>
+                            <p class="input-container">
+                                <input id="cpf" class="input" type="text" pattern=".+" th:field="*{cpf}" required />
+                                <label class="label" for="cpf">CPF*</label>
+                            </p>
+                            <p class="input-container">
+                                <input id="telefone" class="input" type="text" pattern=".+" th:field="*{telefone}" required />
+                                <label class="label" for="telefone">Telefone*</label>
+                            </p>
+                            <p class="input-container">
+                                <label class="label">Selecionar plantão*
+                                    <select>
+                                        <option value="0">Matutino</option>
+                                        <option value="1">Vespertino</option>
+                                    </select></label>
+                            </p>
+                            <p class="texto9">*Li e aceito os termos de uso.
+                                <input type="checkbox">
+                            </p>
+                            <p class="texto9"><a href="https://www.mozilla.org/pt-BR/">Clique aqui para acessar os termos de
                                 uso</a></p>
-                        <button type="button" class="btn btn-primary botao2 btn-lg">Cadastrar</button>
+                            <button type="submit" class="btn btn-primary botao2 btn-lg">Cadastrar</button>
+                        </form>
+
                     </div>
                 </div>
             </div>

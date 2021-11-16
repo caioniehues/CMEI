@@ -1,6 +1,5 @@
 package br.fag.cmei.entidades;
 
-import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -8,13 +7,13 @@ import javax.persistence.*;
 
 @Getter
 @Setter
-@Table(name = "usuario_secretaria")
+@Table(name = "usuario_professor")
 @Entity
-public class UsuarioSecretaria
+public class Professor
 {
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "GEN_ID_SECRETARIA")
-    @SequenceGenerator(name = "GEN_ID_SECRETARIA", sequenceName = "ID_SECRETARIA", allocationSize = 1)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "GEN_ID_PROFESSOR")
+    @SequenceGenerator(name = "GEN_ID_PROFESSOR", sequenceName = "ID_PROFESSOR", allocationSize = 1)
     @Column(name = "id", nullable = false)
     private Long id;
 
@@ -29,6 +28,5 @@ public class UsuarioSecretaria
 
     @Column(name = "senha")
     private String senha;
-
 
 }

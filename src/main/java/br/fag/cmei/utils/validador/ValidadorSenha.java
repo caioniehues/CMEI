@@ -1,6 +1,6 @@
 package br.fag.cmei.utils.validador;
 
-import br.fag.cmei.dto.UsuarioDTO;
+import br.fag.cmei.dto.UsuarioCadastroDTO;
 
 import javax.validation.ConstraintValidator;
 import javax.validation.ConstraintValidatorContext;
@@ -12,7 +12,7 @@ public class ValidadorSenha implements ConstraintValidator<SenhaValida, Object> 
 
     @Override
     public boolean isValid(Object object, ConstraintValidatorContext constraintValidatorContext) {
-        UsuarioDTO usuario = (UsuarioDTO) object;
+        UsuarioCadastroDTO usuario = (UsuarioCadastroDTO) object;
         return usuario.getSenha().equals(usuario.getConfirmaSenha());
     }
 }

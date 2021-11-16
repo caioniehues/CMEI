@@ -26,14 +26,7 @@
                         <p><img src="imagens/logo.png" width="200" height="200">
                         <p class="texto2">Primeiro Acesso</p>
                         <form th:action="@{/registrar}" th:object="${usuario}" method="post" enctype="utf8" >
-                            <p class="input-container">
-                                <input id="name" th:field="*{nome}" class="input" type="text" pattern=".+" required />
-                                <label class="label" for="name">Nome*</label>
-                            </p>
-                            <p class="input-container">
-                                <input id="email" th:field="*{email}" class="input" type="email" pattern=".+" required />
-                                <label class="label" for="email">E-mail*</label>
-                            </p>
+
                            <p class="input-container">
                                 <input id="cpf" th:field="*{cpf}" class="input" type="text" pattern=".+" required />
                                 <label class="label" for="cpf">CPF*</label>

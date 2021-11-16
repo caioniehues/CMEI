@@ -17,22 +17,24 @@
         <div class="container">
             <div class="row">
                 <div class="col-6 login2">
-                    <form method="post" th:action="@{/login}" >
+                    <form th:action="@{/login}" method="post" >
+
                         <h1 class="cmei2">CMEI</h1>
                         <img th:src="@{imagens/logo.png}" width="200" height="200">
                         <p class="texto2">Bem-vindo!</p>
 
                         <p class="input-container">
-                            <input id="username" class="input" type="email" pattern=".+" required />
+                            <input id="username" name="username" class="form-control" type="text"  required />
                             <label class="label" for="username">E-mail*</label>
                         </p>
                         <p class="input-container">
-                            <input id="password" class="input" type="password" pattern=".+" required />
+                            <input id="password" name="password" class="form-control" type="password"  required />
                             <label class="label" for="password">Senha*</label>
                         </p>
 
                         <button type="submit" name="entrar" class="btn btn-primary botao btn-lg"
                             style="background-color:#016BB7;color: white;">Acessar</button>
+
                     </form>
                 </div>
                 <div class="cadastro2 col-6">

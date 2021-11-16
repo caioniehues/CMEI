@@ -1,10 +1,9 @@
 package br.fag.cmei.service;
 
 import br.fag.cmei.config.UserRoles;
-import br.fag.cmei.dto.UsuarioDTO;
-import br.fag.cmei.entidades.Cargo;
+import br.fag.cmei.dto.UsuarioCadastroDTO;
+import br.fag.cmei.dto.UsuarioVinculadoDTO;
 import br.fag.cmei.entidades.Usuario;
-import br.fag.cmei.repository.CargoRepository;
 import br.fag.cmei.repository.UsuarioRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -25,32 +24,22 @@ import java.util.List;
 @Slf4j
 public class UsuarioServiceImpl implements UsuarioService, UserDetailsService {
 
-
     private final UsuarioRepository usuarioRepository;
 
-
-    private final CargoRepository cargoRepository;
-
-
     @Override
-    public Usuario saveUsuario(UsuarioDTO usuarioDTO) throws Exception {
-        log.info("salvando novo usuario no banco {}", usuarioDTO.getCpf());
-        usuarioRepository.save(new Usuario(usuarioDTO));
-        return usuarioRepository.findByCpf(usuarioDTO.getCpf());
+    public Usuario saveUsuario(UsuarioVinculadoDTO usuarioCadastroDTO) throws Exception {
+        log.info("salvando novo usuario no banco {}", usuarioCadastroDTO.getCpf());
+        usuarioRepository.save(new Usuario(usuarioCadastroDTO));
+        return usuarioRepository.findByCpf(usuarioCadastroDTO.getCpf());
     }
 
-    @Override
-    public Cargo saveCargo(Cargo cargo) throws Exception {
-        log.info("salvando novo cargo no banco {}", cargo.getNome());
-        return cargoRepository.save(cargo);
+    public Usuario savaUsuario(Usuario usuario){
+        usuarioRepository.save(usuario);
+        return usuarioRepository.findByCpf(usuario.getCpf());
     }
 
-    @Override
-    public void addCargoToUsuario(String cpf, String nomeCargo) {
-        log.info("adicionando cargo ao usuario {} {}", nomeCargo, cpf);
-        Usuario usuario = usuarioRepository.findByCpf(cpf);
-        Cargo cargo = cargoRepository.findByNome(nomeCargo);
-        usuario.getCargoes().add(cargo);
+    public List<Usuario> buscarPorCargo(UserRoles userRoles){
+        return usuarioRepository.findAllByUserRoles(userRoles);
     }
 
     @Override
@@ -59,21 +48,17 @@ public class UsuarioServiceImpl implements UsuarioService, UserDetailsService {
         return usuarioRepository.findByCpf(cpf);
     }
 
-    @Override
-    public List<Usuario> listarUsuariosPorCargo(Cargo cargo) {
-        log.info("listando os usuarios por cargo {} ", cargo);
-        return usuarioRepository.findByCargoes(cargo.getNome());
-    }
+
 
     @Override
-    public UserDetails loadUserByUsername(String cof) throws UsernameNotFoundException {
-        Usuario usuario = usuarioRepository.findByCpf(cof);
+    public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {
+        Usuario usuario = usuarioRepository.findByEmail(email);
         if(usuario == null){
             log.error("usuario não encontrado");
             throw new UsernameNotFoundException("usuario não encontrado");
         }
         Collection<SimpleGrantedAuthority> autoridades = new ArrayList<>();
-        autoridades.add(new SimpleGrantedAuthority(UserRoles.DIRETOR.name()));
+        autoridades.add(new SimpleGrantedAuthority(usuario.getUserRoles().name()));
         return new org.springframework.security.core.userdetails.User(usuario.getNome(), usuario.getSenha(), autoridades);
     }
 }

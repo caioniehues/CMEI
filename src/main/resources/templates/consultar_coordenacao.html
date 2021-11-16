@@ -36,8 +36,8 @@
                         <div>
                             <table>
                                 <tr>
-                           <td><a class="activeBtn" href=""><img src="imagens/CsltCoordenador.png"></a></td>
-                           <td><a class="activeBtn" href="AdcCoordenação.html"><img src="imagens/AdcCoordenador.png"></a><td>
+                           <td><a class="activeBtn" th:href="@{/consultar_coordenacao}"><img src="imagens/CsltCoordenador.png"></a></td>
+                           <td><a class="activeBtn" th:href="@{/adicionar_coordenacao}"><img src="imagens/AdcCoordenador.png"></a><td>
                             <td><a class="activeBtn" href="ArqCoordenação.html"><img src="imagens/ArqCoordenador.png"></a><td>
                             </tr>
                             </table>
@@ -48,8 +48,18 @@
                                 </p>
                         </div>
                         <div class="coordList">
-                            <li><p><c href=""><button id="coord">Maria Lucia</c></p></li>
-                            <li><p><c href=""><button id="coord">Aline Souza</c></p></li>
+                            <table>
+                                <tbody>
+
+                                <tr th:each="coordenador : ${lista_coordenadores}">
+                                    <li>
+                                        <p>
+                                            <a th:href="@{/arquivar_coordenador}"><button id="coord" > <span th:text="${coordenador.nome}"> </span></button></a>
+                                        </p>
+                                    </li>
+                                </tr>
+                                </tbody>
+                            </table>
                         </div>
                     </div>
                     <div class="col-6 direito">

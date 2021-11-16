@@ -8,13 +8,13 @@ import javax.persistence.*;
 
 @Getter
 @Setter
-@Table(name = "usuario_diretor")
+@Table(name = "usuario_secretaria")
 @Entity
-public class UsuarioDiretor
+public class Secretario
 {
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "GEN_ID_DIRETOR")
-    @SequenceGenerator(name = "GEN_ID_DIRETOR", sequenceName = "ID_DIRETOR", allocationSize = 1)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "GEN_ID_SECRETARIA")
+    @SequenceGenerator(name = "GEN_ID_SECRETARIA", sequenceName = "ID_SECRETARIA", allocationSize = 1)
     @Column(name = "id", nullable = false)
     private Long id;
 

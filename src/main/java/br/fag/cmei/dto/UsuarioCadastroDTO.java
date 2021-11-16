@@ -1,11 +1,11 @@
 package br.fag.cmei.dto;
 
+import br.fag.cmei.config.UserRoles;
 import br.fag.cmei.utils.validador.CpfValido;
+import br.fag.cmei.utils.validador.CpfVinculado;
 import br.fag.cmei.utils.validador.EmailValido;
 import br.fag.cmei.utils.validador.SenhaValida;
-import lombok.Data;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
@@ -13,18 +13,10 @@ import javax.validation.constraints.NotNull;
 @SenhaValida
 @Getter
 @Setter
-public class UsuarioDTO {
+@NoArgsConstructor
+public class UsuarioCadastroDTO {
 
-    @NotEmpty
-    @NotNull
-    private String nome;
-
-    @EmailValido
-    @NotEmpty
-    @NotNull
-    private String email;
-
-    @CpfValido
+    @CpfVinculado
     @NotEmpty
     @NotNull
     private String cpf;
@@ -37,4 +29,6 @@ public class UsuarioDTO {
     @NotEmpty
     @NotNull
     private String confirmaSenha;
+
+
 }

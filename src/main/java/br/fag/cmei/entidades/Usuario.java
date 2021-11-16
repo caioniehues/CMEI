@@ -1,12 +1,18 @@
 package br.fag.cmei.entidades;
 
-import br.fag.cmei.dto.UsuarioDTO;
+import br.fag.cmei.config.UserRoles;
+import br.fag.cmei.dto.UsuarioCadastroDTO;
+import br.fag.cmei.dto.UsuarioVinculadoDTO;
 import lombok.*;
+import org.hibernate.Hibernate;
 
 import javax.persistence.*;
-import java.util.Collection;
+import java.util.Objects;
 
-@Data @NoArgsConstructor @AllArgsConstructor
+@Getter
+@Setter
+@ToString
+@NoArgsConstructor
 @Table(name = "usuario")
 @Entity
 public class Usuario {
@@ -19,29 +25,47 @@ public class Usuario {
     @Column(name = "nome")
     private String nome;
 
-    @Column(name = "vinculado")
-    private boolean vinculado;
+    @Column(name = "cadastrado")
+    private boolean cadastrado;
+
+    @Enumerated(EnumType.STRING)
+    @Column(name = "cargo")
+    private UserRoles userRoles;
 
     @Column(name = "email")
     private String email;
 
-    @Column(name = "cpf", nullable = false, unique = true)
+    @Column(name = "cpf", nullable = false)
     private String cpf;
 
     @Column(name = "senha")
     private String senha;
 
-    @ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-    @JoinTable(name = "usuario_cargos",
-            joinColumns = @JoinColumn(name = "usuario_id"),
-            inverseJoinColumns = @JoinColumn(name = "cargos_id"))
-    private Collection<Cargo> cargoes;
+    @Column(name = "plantao")
+    private String plantao;
 
-    public Usuario(UsuarioDTO usuarioDTO) {
-        this.nome = usuarioDTO.getNome();
-        this.senha = usuarioDTO.getSenha();
-        this.email = usuarioDTO.getEmail();
-        this.cpf = usuarioDTO.getCpf();
-        this.vinculado = true;
+    @Column(name = "telefone")
+    private String telefone;
+
+    public Usuario(UsuarioVinculadoDTO usuarioVinculadoDTO) {
+        this.nome = usuarioVinculadoDTO.getNome();
+        this.email = usuarioVinculadoDTO.getEmail();
+        this.cpf = usuarioVinculadoDTO.getCpf();
+        this.userRoles = usuarioVinculadoDTO.getUserRoles();
+        this.cadastrado = false;
+        this.telefone = usuarioVinculadoDTO.getTelefone();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || Hibernate.getClass(this) != Hibernate.getClass(o)) return false;
+        Usuario usuario = (Usuario) o;
+        return id != null && Objects.equals(id, usuario.id);
+    }
+
+    @Override
+    public int hashCode() {
+        return getClass().hashCode();
     }
 }

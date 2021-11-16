@@ -1,20 +1,20 @@
 package br.fag.cmei.service;
 
-import br.fag.cmei.dto.UsuarioDTO;
-import br.fag.cmei.entidades.Cargo;
+import br.fag.cmei.dto.UsuarioCadastroDTO;
+import br.fag.cmei.dto.UsuarioVinculadoDTO;
 import br.fag.cmei.entidades.Usuario;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
+@Repository
 public interface UsuarioService {
 
-    Usuario saveUsuario(UsuarioDTO usuarioDTO) throws Exception;
+    Usuario saveUsuario(UsuarioVinculadoDTO usuarioCadastroDTO) throws Exception;
 
-    Cargo saveCargo(Cargo cargo) throws Exception;
 
-    void addCargoToUsuario(String cof, String nomeCargo);
 
     Usuario buscaUsuario(String cpg);
 
-    List<Usuario> listarUsuariosPorCargo(Cargo cargo);
+
 }

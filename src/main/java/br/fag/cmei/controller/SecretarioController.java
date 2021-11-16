@@ -39,7 +39,7 @@ public class SecretarioController {
     public ModelAndView vinculaSecretaria(@ModelAttribute("secretaria") @Valid UsuarioVinculadoDTO secretaria,
                                            HttpServletRequest request, Errors errors) throws Exception {
 
-        secretaria.setUserRoles(UserRoles.COORDENADOR);
+        secretaria.setUserRoles(UserRoles.SECRETARIO);
         Usuario registrado = usuarioService.saveUsuario(secretaria);
         return new ModelAndView("consultar_secretaria", "usuario", registrado);
     }

@@ -17,21 +17,21 @@
         <div class="container">
             <div class="row">
                 <div class="col-6 login2">
-                    <form method="POST">
+                    <form method="post" th:action="@{/login}" >
                         <h1 class="cmei2">CMEI</h1>
                         <img th:src="@{imagens/logo.png}" width="200" height="200">
                         <p class="texto2">Bem-vindo!</p>
 
                         <p class="input-container">
-                            <input id="email" class="input" type="email" pattern=".+" required />
-                            <label class="label" for="email">E-mail*</label>
+                            <input id="username" class="input" type="email" pattern=".+" required />
+                            <label class="label" for="username">E-mail*</label>
                         </p>
                         <p class="input-container">
-                            <input id="senha" class="input" type="password" pattern=".+" required />
-                            <label class="label" for="senha">Senha*</label>
+                            <input id="password" class="input" type="password" pattern=".+" required />
+                            <label class="label" for="password">Senha*</label>
                         </p>
 
-                        <a th:href="@{perfil}"/><button type="button" name="entrar" class="btn btn-primary botao btn-lg"
+                        <button type="submit" name="entrar" class="btn btn-primary botao btn-lg"
                             style="background-color:#016BB7;color: white;">Acessar</button>
                     </form>
                 </div>
@@ -39,7 +39,7 @@
                     <h1 class="cmei">CMEI</h1>
                     <p><img th:src="@{imagens/logo.png}" width="200" height="200">
                     <p class="texto">Primeiro vez aqui?</p>
-                    <a th:href="@{/login/cadastro}"> <button type="button"
+                    <a th:href="@{/cadastro}"> <button type="button"
                             class="btn btn-primary botao btn-lg">Cadastrar</button></a>
                 </div>
             </div>

@@ -1,5 +1,6 @@
 package br.fag.cmei.service;
 
+import br.fag.cmei.config.UserRoles;
 import br.fag.cmei.dto.UsuarioDTO;
 import br.fag.cmei.entidades.Cargo;
 import br.fag.cmei.entidades.Usuario;
@@ -72,7 +73,7 @@ public class UsuarioServiceImpl implements UsuarioService, UserDetailsService {
             throw new UsernameNotFoundException("usuario não encontrado");
         }
         Collection<SimpleGrantedAuthority> autoridades = new ArrayList<>();
-        usuario.getCargoes().forEach(cargo -> autoridades.add(new SimpleGrantedAuthority(cargo.getNome())));
+        autoridades.add(new SimpleGrantedAuthority(UserRoles.DIRETOR.name()));
         return new org.springframework.security.core.userdetails.User(usuario.getNome(), usuario.getSenha(), autoridades);
     }
 }

@@ -17,31 +17,48 @@ import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 
 @Configuration
 @EnableWebSecurity
-@RequiredArgsConstructor
 public class SecSecurityConfig extends WebSecurityConfigurerAdapter {
 
-    private final UsuarioServiceImpl usuarioDetailsService;
-    private final BCryptPasswordEncoder bCryptPasswordEncoder;
+    @Autowired
+    private  UsuarioServiceImpl usuarioDetailsService;
+
+
 
     @Override
     protected void configure(final AuthenticationManagerBuilder auth) throws Exception {
-        auth.userDetailsService(usuarioDetailsService).passwordEncoder(bCryptPasswordEncoder);
+
+        auth.inMemoryAuthentication().withUser("administrador@cmei.com").password("{noop}administrador").roles(UserRoles.DIRETOR.name());
+         auth.authenticationProvider(authProvider());
+
     }
 
     @Override
     protected void configure(final HttpSecurity http) throws Exception {
         http
                 .csrf().disable()
-        .authorizeRequests().antMatchers("/login/**", "/js/**", "/css/**", "/imagens/**", "/login/cadastro/**").permitAll()
+        .authorizeRequests().antMatchers("/login/**", "/js/**", "/css/**", "/imagens/**", "/cadastro/**", "/h2/**").permitAll()
+                .antMatchers("/consultar_coordenacao", "/consultar_secretaria", "/consultar_professores").hasRole(UserRoles.DIRETOR.name())
+                .antMatchers("/consultar_coordenacao", "/consultar_secretaria", "/consultar_professores").hasRole(UserRoles.COORDENADOR.name())
+                .antMatchers("/consultar_secretaria", "/consultar_professores").hasRole(UserRoles.SECRETARIO.name())
+                .antMatchers("/consultar_professores").hasRole(UserRoles.PROFESSOR.name())
                 .anyRequest().authenticated().and()
-                .formLogin().loginPage("/cadastro")
-                .permitAll().and().logout().invalidateHttpSession(true)
-                .clearAuthentication(true).logoutRequestMatcher(new AntPathRequestMatcher("/logout")).logoutSuccessUrl("/login?logout").permitAll();
+                .formLogin().loginPage("/login").permitAll()
+                .defaultSuccessUrl("/perfil", true);
+
     }
 
+    @Bean
+    public PasswordEncoder encoder() {
+        return new BCryptPasswordEncoder();
+    }
 
-
-
+    @Bean
+    public DaoAuthenticationProvider authProvider() {
+        DaoAuthenticationProvider authProvider = new DaoAuthenticationProvider();
+        authProvider.setUserDetailsService(usuarioDetailsService);
+        authProvider.setPasswordEncoder(encoder());
+        return authProvider;
+    }
 }
 
 

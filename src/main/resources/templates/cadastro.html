@@ -25,7 +25,7 @@
                     <div class="cadastro col-6">
                         <p><img src="imagens/logo.png" width="200" height="200">
                         <p class="texto2">Primeiro Acesso</p>
-                        <form action="/registrar" th:object="${usuario}" method="post" enctype="utf8" >
+                        <form th:action="@{/registrar}" th:object="${usuario}" method="post" enctype="utf8" >
                             <p class="input-container">
                                 <input id="name" th:field="*{nome}" class="input" type="text" pattern=".+" required />
                                 <label class="label" for="name">Nome*</label>
